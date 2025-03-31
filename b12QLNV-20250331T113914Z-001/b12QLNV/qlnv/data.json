@@ -1,0 +1,32 @@
+[
+    {
+        "MaNV": 1,
+        "TenNV": "khoi",
+        "Luong1h": 1000,
+        "SoGioLam": 10
+    },
+    {
+        "MaNV": 2,
+        "TenNV": "khoi2",
+        "Luong1h": 10000,
+        "SoGioLam": 2
+    },
+    {
+        "MaNV": 3,
+        "TenNV": "khoi",
+        "Luong1h": 10000020,
+        "SoGioLam": 20
+    },
+    {
+        "MaNV": 4,
+        "TenNV": "sohai",
+        "Luong1h": 1,
+        "SoGioLam": 1
+    },
+    {
+        "MaNV": 5,
+        "TenNV": "khoi khoi",
+        "Luong1h": 1000,
+        "SoGioLam": 20
+    }
+]

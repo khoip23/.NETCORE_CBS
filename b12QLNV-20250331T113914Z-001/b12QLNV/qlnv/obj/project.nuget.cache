@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E7ZAHzUs6sg=",
+  "success": true,
+  "projectFilePath": "C:\\Study\\NET02\\b12QLNV-20250331T113914Z-001\\b12QLNV\\qlnv\\qlnv.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Khoi\\.nuget\\packages\\unidecode.net\\2.1.0\\unidecode.net.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
