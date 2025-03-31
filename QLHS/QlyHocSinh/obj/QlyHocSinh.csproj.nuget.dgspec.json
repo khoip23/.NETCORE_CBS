@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj": {}
+    "C:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj": {}
   },
   "projects": {
-    "c:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj": {
+    "C:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj",
+        "projectUniqueName": "C:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj",
         "projectName": "QlyHocSinh",
-        "projectPath": "c:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj",
+        "projectPath": "C:\\Study\\NET02\\QLHS\\QlyHocSinh\\QlyHocSinh.csproj",
         "packagesPath": "C:\\Users\\Khoi\\.nuget\\packages\\",
-        "outputPath": "c:\\Study\\NET02\\QLHS\\QlyHocSinh\\obj\\",
+        "outputPath": "C:\\Study\\NET02\\QLHS\\QlyHocSinh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Khoi\\AppData\\Roaming\\NuGet\\NuGet.Config",
