@@ -15,3 +15,4 @@ C:\Study\NET02\b12QLNV-20250331T113914Z-001\b12QLNV\qlnv\obj\Debug\net8.0\refint
 C:\Study\NET02\b12QLNV-20250331T113914Z-001\b12QLNV\qlnv\obj\Debug\net8.0\qlnv.pdb
 C:\Study\NET02\b12QLNV-20250331T113914Z-001\b12QLNV\qlnv\obj\Debug\net8.0\qlnv.genruntimeconfig.cache
 C:\Study\NET02\b12QLNV-20250331T113914Z-001\b12QLNV\qlnv\obj\Debug\net8.0\ref\qlnv.dll
+c:\Study\NET02\b12QLNV-20250331T113914Z-001\b12QLNV\qlnv\obj\Debug\net8.0\qlnv.sourcelink.json

@@ -1,0 +1,15 @@
+C:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.GeneratedMSBuildEditorConfig.editorconfig
+C:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.AssemblyInfoInputs.cache
+C:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.AssemblyInfo.cs
+C:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.csproj.CoreCompileInputs.cache
+C:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.sourcelink.json
+c:\Study\NET02\QLHS\QlyHocSinh\bin\Debug\net8.0\QlyHocSinh.exe
+c:\Study\NET02\QLHS\QlyHocSinh\bin\Debug\net8.0\QlyHocSinh.deps.json
+c:\Study\NET02\QLHS\QlyHocSinh\bin\Debug\net8.0\QlyHocSinh.runtimeconfig.json
+c:\Study\NET02\QLHS\QlyHocSinh\bin\Debug\net8.0\QlyHocSinh.dll
+c:\Study\NET02\QLHS\QlyHocSinh\bin\Debug\net8.0\QlyHocSinh.pdb
+c:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.dll
+c:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\refint\QlyHocSinh.dll
+c:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.pdb
+c:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\QlyHocSinh.genruntimeconfig.cache
+c:\Study\NET02\QLHS\QlyHocSinh\obj\Debug\net8.0\ref\QlyHocSinh.dll
