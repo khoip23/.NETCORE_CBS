@@ -1,12 +1,13 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+
 // using Unidecode.NET;
 
 class QuanLyHocSinh
 {
     // thuộc tính
     // cần có 1 danh sách để quản lý
-    List<HocSinh> ds = new List<HocSinh>(); // khởi tạo list rỗng
+    List<HocSinh>? ds = new List<HocSinh>(); // khởi tạo list rỗng
 
     public int Chon { get; set; }
 
@@ -24,6 +25,7 @@ class QuanLyHocSinh
         int diemAnh = int.Parse(Console.ReadLine());
         HocSinh emp = new HocSinh(ten, diemToan, diemVan, diemAnh); // khởi tạo đối tượng
         ds.Add(emp);
+        luuData(); // lưu lại data vào file json
         Console.WriteLine("Đã thêm thành công!");
     }
 
@@ -62,7 +64,8 @@ class QuanLyHocSinh
 -------------Danh sách chức năng------------------
         1/ Thêm nhân viên
         2/ Xoá nhân viên
-        3/ Thoát
+        3/ Hiển thị danh sách thông tin học sinh
+        4/ Thoát
         ";
         Console.WriteLine(lsmenu);
     }
@@ -74,5 +77,26 @@ class QuanLyHocSinh
         Console.Write("Hãy chọn chức năng từ 1 -> 3: ");
         int n = int.Parse(Console.ReadLine());
         Chon = n;
+    }
+
+    // cần lưu lại list vào file json để khi start lại vẫn có dữ liệu
+    //khi chạy vẫn còn data cũ
+    //phương thức lưu data
+
+    public void luuData()
+    {
+        // chuyển đổi list thành json
+        string json = JsonSerializer.Serialize(ds);
+        // ghi vào file
+        File.WriteAllText("data.json", json);
+    }
+
+    // phương thức đọc data từ file json
+    public void docData()
+    {
+        // đọc file json
+        string json = File.ReadAllText("data.json");
+        // chuyển đổi json thành list
+        ds = JsonSerializer.Deserialize<List<HocSinh>>(json);
     }
 }

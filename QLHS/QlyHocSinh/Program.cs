@@ -20,6 +20,12 @@
                     qly.XoaHS(input);
                     break;
                 case 3:
+                    qly.HienThiDanhSach();
+                    break;
+                case 4:
+                    qly.luuData();
+                    break;
+                case 5:
                     Console.WriteLine("Tạm biệt !!");
                     return;
                 default:
