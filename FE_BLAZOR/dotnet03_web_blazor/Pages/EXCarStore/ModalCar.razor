@@ -1,3 +1,4 @@
+@*bs5-modal-default *@
 <!-- Modal trigger button -->
 <button
     type="button"
@@ -7,7 +8,6 @@
 >
     Launch
 </button>
-
 <!-- Modal Body -->
 <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
 <div
@@ -22,13 +22,13 @@
     aria-hidden="true"
 >
     <div
-        class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+        class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
         role="document"
     >
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalTitleId">
-                    Modal title
+                    @modalData.name
                 </h5>
                 <button
                     type="button"
@@ -37,7 +37,11 @@
                     aria-label="Close"
                 ></button>
             </div>
-            <div class="modal-body">Body</div>
+            <div class="modal-body">
+                <img src="@modalData.image" alt="..." class="w-100" />
+
+
+            </div>
             <div class="modal-footer">
                 <button
                     type="button"
@@ -52,10 +56,7 @@
     </div>
 </div>
 
-<!-- Optional: Place to the bottom of scripts -->
-<script>
-    const myModal = new bootstrap.Modal(
-        document.getElementById("modalId"),
-        options,
-    );
-</script>
+@code {
+    [Parameter]
+    public ProductCardVM modalData {get;set;} = new ProductCardVM();
+}

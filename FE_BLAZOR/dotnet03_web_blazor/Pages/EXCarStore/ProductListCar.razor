@@ -3,13 +3,20 @@
         @foreach (ProductCardVM item in lstCarProduct)
         {
             <div class="col-3">
-                <ProductCar />
+                <ProductCar prodData="@item" ChangeCarDetail="ChangeCarDetail" />
+
             </div>
-        }   
+        }
 
     </div>
 </div>
 
-@code{
+
+@code {
     public List<ProductCardVM> lstCarProduct = DbCarProducts.lstProduct;
+    
+    [Parameter]
+    public EventCallback<ProductCardVM> ChangeCarDetail{get;set;}
+
+
 }

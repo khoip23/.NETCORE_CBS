@@ -7,7 +7,7 @@ public static class DbCarProducts
         new ProductCardVM()
         {
             id = 1,
-            name = "black car",
+            name = "Black car",
             price = 1000,
             image = "/products/black-car.jpg",
         },
@@ -21,15 +21,15 @@ public static class DbCarProducts
         new ProductCardVM()
         {
             id = 3,
-            name = "Silver Car",
+            name = "Silver car",
             price = 3000,
             image = "/products/silver-car.jpg",
         },
         new ProductCardVM()
         {
-            id = 3,
-            name = "Steel car",
-            price = 3000,
+            id = 4,
+            name = "Silver car",
+            price = 4000,
             image = "/products/steel-car.jpg",
         },
     };
