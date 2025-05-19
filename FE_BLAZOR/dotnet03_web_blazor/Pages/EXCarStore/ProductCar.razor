@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="card">
+        <img src="@prodCar.image" alt="..." />
+        <p class="card-text">@prodCar.price</p>
+        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalID">Detail</button>
+    </div>
+</div>
+
+@code{
+    [Parameter]
+    public ProductCardVM prodCar{get;set;} = new ProductCardVM();
+}

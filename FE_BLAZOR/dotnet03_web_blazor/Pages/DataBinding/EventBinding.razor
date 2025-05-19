@@ -1,0 +1,32 @@
+@page "/event-binding"
+
+<div class="container-fluid">
+    <span class="alert alert-danger d-inline-block">
+       Count:  @Count
+    </span> <br />
+    <button class="btn btn-dark" @onclick="tangSoDem">
+        On Click
+    </button>
+
+    <div class="card w-25">
+        <img src="https://i.pravatar.cc?u=@numberRandom" alt="..." />
+        <div class="card-body">
+            <button class="btn btn-danger" @onclick="RandomUser">
+                Random <i class="fa fa-heart"></i>
+            </button>
+        </div>
+    </div>
+</div>
+@code {
+    public int Count{get;set;}= 1;  
+    public int numberRandom {get;set;} = 1;
+    public void tangSoDem() {
+        Count++;
+    }
+    public void RandomUser(){
+        Random random = new Random();
+        numberRandom= random.Next(1,100);
+       
+    }
+
+}

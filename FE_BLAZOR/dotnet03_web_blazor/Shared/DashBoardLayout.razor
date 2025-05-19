@@ -1,0 +1,24 @@
+@inherits LayoutComponentBase
+<div class="d-flex">
+    <div class="w-25 bg-dark text-white min-vh-100">
+        <i class="display-4 fa fa-dice"></i>
+        <ul>
+            <li>
+                <NavLink href="/"> Quản lý A</NavLink>
+            </li>
+            <li>
+                <NavLink href="/"> Quản lý b</NavLink>
+            </li>
+        </ul>
+    </div>
+    <div class="w-75">
+        <div class="header bg-dark text-white p-1 text-end">
+            <span class="d-inline-block rounded-circle p-5">
+                Khải
+            </span>
+        </div>
+        <div class="container-fluid">
+            @Body
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+@page "/data-binding"
+<div class="container-fluid">
+    <h1>One way binding</h1>
+    <span class="badge bg-dark">Hello ! @HoTen</span>
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <img style="height:350px;" src="https://i.pravatar.cc?u=@prod.id" alt="..." />
+                <div class="card-body">
+                    <h1 class="card-title">@prod.name</h1>
+                    <p class="card-text">@prod.price</p>
+                    <button class="btn btn-dark">View detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <span class="alert alert-danger d-inline-block">
+       tổng = @tinhTong(5,10)
+    </span>
+</div>
+
+@code {
+    class ProductView{
+        public int id {get;set;} = 1;
+        public string name {get;set;} = "Iphone";
+        public decimal price {get;set;} =1000;
+    }  
+    private string HoTen {get;set;} = "Khải";
+    private ProductView prod = new ProductView();
+
+    public int tinhTong (int a,int b) {
+        return a + b;
+    }
+
+
+}
+
+    
