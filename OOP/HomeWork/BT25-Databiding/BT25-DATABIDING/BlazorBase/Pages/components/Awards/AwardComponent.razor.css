@@ -1,0 +1,44 @@
+.awards {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    margin-top: 150px;
+    background-color: #fff; /* Nền trắng */
+    border-radius: 8px; /* Bo góc nhẹ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    text-align: left;
+}
+
+.awards h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #222; /* Màu đậm cho tiêu đề */
+    border-bottom: 4px solid #f39c12; /* Đường gạch dưới màu cam */
+    display: inline-block;
+}
+
+.awards-list {
+    list-style: none; /* Loại bỏ bullet mặc định */
+    padding: 0;
+    margin: 0;
+}
+
+.awards-list li {
+    font-size: 16px;
+    line-height: 1.8; /* Khoảng cách dòng thoáng */
+    color: #555; /* Màu xám cho nội dung */
+    margin-bottom: 10px;
+    position: relative; /* Để thêm biểu tượng cup */
+    padding-left: 30px; /* Đẩy nội dung sang phải */
+}
+
+.awards-list li::before {
+    content: "🏆"; /* Biểu tượng cup */
+    position: absolute;
+    left: 0;
+    font-size: 18px; /* Kích thước biểu tượng */
+    color: #f39c12; /* Màu cam cho biểu tượng */
+}

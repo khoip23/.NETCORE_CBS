@@ -1,0 +1,73 @@
+.skills {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    margin-top: 150px;
+    background-color: #fff; /* Nền trắng */
+    border-radius: 8px; /* Bo góc nhẹ */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    text-align: left;
+}
+
+.skills h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #222; /* Màu đậm cho tiêu đề chính */
+    border-bottom: 4px solid #f39c12; /* Đường gạch dưới màu cam */
+    display: inline-block;
+}
+
+.skills-category {
+    margin-bottom: 40px; /* Khoảng cách giữa các nhóm */
+}
+
+.skills-category h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444; /* Màu xám đậm */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap; /* Hàng biểu tượng tự động xuống dòng */
+    gap: 20px; /* Khoảng cách giữa các biểu tượng */
+    align-items: center;
+}
+
+.skills-icons i {
+    font-size: 40px; /* Kích thước biểu tượng */
+    color: #666; /* Màu xám ban đầu */
+    transition: transform 0.3s ease, color 0.3s ease; /* Hiệu ứng hover */
+}
+
+.skills-icons i:hover {
+    color: #f39c12; /* Màu cam khi hover */
+    transform: scale(1.2); /* Phóng to nhẹ khi hover */
+}
+
+.skills-workflow {
+    list-style: none; /* Loại bỏ bullet mặc định */
+    padding: 0;
+    margin: 0;
+}
+
+.skills-workflow li {
+    font-size: 16px;
+    line-height: 1.8; /* Dòng thoáng */
+    color: #555; /* Màu xám nhạt */
+    margin-bottom: 10px;
+    position: relative; /* Để thêm biểu tượng checkmark */
+    padding-left: 25px; /* Đẩy nội dung sang phải */
+}
+
+.skills-workflow li::before {
+    content: "✓"; /* Biểu tượng checkmark */
+    position: absolute;
+    left: 0;
+    color: #f39c12; /* Màu cam */
+    font-weight: bold;
+}

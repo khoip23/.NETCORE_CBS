@@ -1,0 +1,66 @@
+.experience {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 750px; /* Đặt chiều rộng tối đa */
+    color: #333;
+}
+
+.experience h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Chữ hoa */
+    border-bottom: 4px solid #f39c12; /* Đường gạch dưới */
+    display: inline-block;
+    color: #222; /* Màu chữ đậm hơn */
+}
+
+.job {
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px; /* Khoảng cách giữa các mục */
+    border-bottom: 1px solid #ddd; /* Đường kẻ nhạt */
+    padding-bottom: 20px;
+}
+
+.job:last-child {
+    border-bottom: none; /* Bỏ đường kẻ cuối cùng */
+}
+
+.job-details {
+    max-width: 30%; /* Chiếm 30% không gian */
+}
+
+.job-details h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+    text-transform: uppercase; /* Chữ in hoa */
+}
+
+.job-details h5 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px;
+    color: #f39c12; /* Màu cam */
+}
+
+.job-details p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.job-description {
+    max-width: 65%; /* Chiếm 65% không gian */
+}
+
+.job-description p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8; /* Khoảng cách dòng rộng hơn */
+    margin: 0;
+}

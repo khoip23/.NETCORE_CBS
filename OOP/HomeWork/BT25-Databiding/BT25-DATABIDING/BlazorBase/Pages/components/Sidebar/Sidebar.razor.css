@@ -1,0 +1,36 @@
+.sidebar {
+    position: fixed; /* Giữ sidebar cố định */
+    top: 0;
+    left: 0; /* Đảm bảo sidebar bắt đầu từ mép trái */
+    background-color: #a35728; /* Màu nền */
+    color: white; /* Màu chữ */
+    height: 100%; /* Chiều cao toàn màn hình */
+    width: 20%; /* Đặt chiều rộng cố định */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Tính padding vào width và height */
+    padding: 20px 0; /* Thêm khoảng cách đều trên dưới */
+}
+
+.sidebar img {
+    width: 150px; /* Kích thước hình ảnh */
+    height: 150px;
+    border-radius: 50%; /* Bo tròn hình ảnh */
+    margin-bottom: 20px; /* Khoảng cách giữa hình ảnh và link */
+}
+
+.sidebar a {
+    color: white;
+    font-size: 18px; /* Kích thước chữ */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    margin: 10px 0; /* Khoảng cách giữa các liên kết */
+    text-align: center; /* Căn giữa chữ */
+    width: 100%; /* Đảm bảo liên kết chiếm toàn chiều rộng sidebar */
+}
+
+.sidebar a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+

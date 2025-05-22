@@ -1,0 +1,15 @@
+h1{
+    font-weight: bold;
+    padding: 120px;
+}
+
+img{
+    width: 400px;
+    height: 100%;
+    margin-left: 50px;
+}
+
+
+button{
+    height: 50px;
+}

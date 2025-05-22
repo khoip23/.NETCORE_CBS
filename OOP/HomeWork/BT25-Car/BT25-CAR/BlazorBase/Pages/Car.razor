@@ -1,0 +1,30 @@
+@page "/car"
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <!-- Left Column -->
+        <div class="col-md-6 text-center">
+            <h1 class="mb-4">Change Color Car</h1>
+            <img src="/@_color-car.jpg" class="img-fluid rounded shadow" alt="Car Image">
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-3 text-center mt-5">
+            <div class="d-grid gap-3">
+
+                <button @onclick="@(e => handleChangeColor("red"))" class="btn btn-danger">RED COLOR</button>
+                <button @onclick="@(e => handleChangeColor("silver"))" class="btn btn-secondary">SILVER COLOR</button>
+                <button @onclick="@(e => handleChangeColor("steel"))" class="btn btn-dark">STEEL COLOR</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code{
+    private string? _color { get; set; } = "black";
+
+    public void handleChangeColor(string color)
+    {
+        _color = color;
+    }
+}

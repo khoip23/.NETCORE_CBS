@@ -1,0 +1,50 @@
+.education {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    max-width: 800px; /* Giới hạn chiều rộng */
+    color: #333;
+}
+
+.education h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase; /* Chữ hoa */
+    color: #222; /* Màu chữ đậm hơn */
+    border-bottom: 4px solid #f39c12; /* Đường gạch dưới */
+    display: inline-block;
+}
+
+.education-item {
+    margin-bottom: 40px; /* Khoảng cách giữa các mục */
+}
+
+.education-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000; /* Màu đen cho tiêu đề trường học */
+    text-transform: uppercase; /* Chữ in hoa */
+}
+
+.education-item h4 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    color: #555; /* Màu xám cho tiêu đề chương trình học */
+}
+
+.education-item p {
+    font-size: 14px;
+    color: #666; /* Màu xám nhạt hơn */
+    margin: 5px 0;
+}
+
+.education-date {
+    font-size: 14px;
+    font-weight: bold;
+    color: #a35728; /* Màu cam nổi bật cho ngày tháng */
+    margin-top: 10px;
+}

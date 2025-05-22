@@ -1,0 +1,69 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height: 100vh;
+}
+
+.main-content {
+    background: white;
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.name-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.name-title span {
+    color: #d45523; /* Màu cam nổi bật */
+}
+
+.contact-info {
+    font-size: 1rem;
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.contact-info a {
+    color: #d45523;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bio {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d45523;
+}
