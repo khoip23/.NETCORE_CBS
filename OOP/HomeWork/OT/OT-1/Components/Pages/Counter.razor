@@ -1,0 +1,18 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<div class="container">
+    <h1>EVEN BIDING</h1>
+    <p id="txtCounter">Counter: @counter</p>
+    <button id="btnCount" class="btn btn-primary" @onclick="ClickCount">Click me</button>
+</div>
+
+@code{
+    private int counter = 1;
+    private void ClickCount()
+    {
+        counter++;
+    }
+}
