@@ -1,0 +1,43 @@
+@page "/bt-giohang"
+
+<div class="container">
+    <GioHang dataGioHang="@lstSPGH" tangGiamSoLuong="tangGiamSoLuong" xoaSanPham = "xoaSanPham" />
+    <DanhSachSanPham themGioHang = "themGioHang"/>
+</div>
+
+
+@code {
+
+    public List<SanPhamGioHang> lstSPGH = new List<SanPhamGioHang>(){
+
+    };
+
+    public void themGioHang(SanPhamGioHang spClick)
+    {
+        //Xử lý thêm giỏ hàng tại đây
+        SanPhamGioHang? checkSP = lstSPGH.Find(sp => sp.maSanPham == spClick.maSanPham);
+        if(checkSP != null){
+            checkSP.soLuong += 1;
+        }
+        else{
+            lstSPGH.Add(spClick);
+        }
+    }
+
+    public void tangGiamSoLuong(ObjectValue maSPSL){
+        SanPhamGioHang checkSP = lstSPGH.Find(sp => sp.maSanPham == int.Parse(maSPSL.key));
+        if(checkSP != null){
+            if(checkSP.soLuong == 1 && maSPSL.value == "-1"){
+                lstSPGH.Remove(checkSP);
+                return;
+            }
+            checkSP.soLuong += int.Parse(maSPSL.value);
+        }
+    }
+
+    public void xoaSanPham(int maSP){
+        lstSPGH = lstSPGH.Where(sp => sp.maSanPham != maSP).ToList();
+    }
+
+
+}
