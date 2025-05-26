@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h3>@prodDetail?.name</h3>
+            <img class="w-100" src="@prodDetail?.image" alt="..." />
+        </div>
+        <div class="col-8">
+            <h3>product</h3>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>id</th>
+                        <th>@prodDetail?.id</th>
+                    </tr>
+                    <tr>
+                        <th>@prodDetail?.name</th>
+                        <th>1000</th>
+                    </tr>
+                    <tr>
+                        <th>@prodDetail?.price</th>
+                        <th>1000</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public ProductCardVM? prodDetail { get; set; }
+
+    public override async Task SetParametersAsync(ParameterView lstParam)
+    {
+        ProductCardVM? param = lstParam.GetValueOrDefault<ProductCardVM>("prodDetail");
+
+        //thay đổi giá trị trước khi render ra giao diện
+        if (param.id == 2)
+        {
+            param.price = 10000;
+        }
+        await base.SetParametersAsync(lstParam);
+    }
+}

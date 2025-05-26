@@ -38,6 +38,12 @@
                 </tr>
             }
         </tbody>
+        <tfoot>
+            <tr>
+                <td align="right" colspan="6">tangGiamSoLuong tien</td>
+                <td>@dataGioHang.Sum(n => n.soLuong * n.giaBan).ToString("N0")</td>
+            </tr>
+        </tfoot>
     </table>
 </div>
 

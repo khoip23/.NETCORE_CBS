@@ -1,0 +1,16 @@
+<div>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Static Card</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Fixed Information</h6>
+            <p class="card-text">This is a static card that does not change.</p>
+            <a href="#" class="card-link">Learn More</a>
+        </div>
+    </div>
+</div>
+
+@code{
+    protected override void OnAfterRender(bool firstRender){
+        Console.WriteLine($"render StaticComponent {firstRender}");
+    }
+}
