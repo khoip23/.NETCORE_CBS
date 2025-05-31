@@ -15,17 +15,20 @@
                 <ChildComponent />
             </div>
         </div>
-        <button class="btn btn-outline-dark" id="renderBtn" @onclick="handleRender">Render parent (@renderCount)</button>
+        <button class="btn btn-outline-dark" id="renderBtn" @onclick="handleRender">Render parent
+            (@renderCount)</button>
     </div>
 </div>
 
-@code{
-    public int renderCount {get; set;} = 1;
-    public void handleRender(){
+@code {
+    public int renderCount { get; set; } = 1;
+    public void handleRender()
+    {
         renderCount++;
     }
 
-    protected override void OnAfterRender(bool firstRender){
+    protected override void OnAfterRender(bool firstRender)
+    {
         Console.WriteLine($"render ParentComponent {firstRender}");
     }
 }

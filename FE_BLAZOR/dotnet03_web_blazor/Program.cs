@@ -1,3 +1,4 @@
+using dotnet03_web_blazor.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -9,6 +10,11 @@ builder.Services.AddServerSideBlazor();
 
 //DI service http
 builder.Services.AddHttpClient();
+
+//DI các service tự tạo
+builder.Services.AddScoped<StateNumberService>();
+builder.Services.AddScoped<Burger>();
+builder.Services.AddScoped<BurgerStateService>();
 
 var app = builder.Build();
 
