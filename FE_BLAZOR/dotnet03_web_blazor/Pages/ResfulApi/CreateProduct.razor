@@ -1,0 +1,24 @@
+@page "/create-product"
+@implements IDisposable
+@inject HttpClient Http
+
+<div class="container">
+    <h3>ResfulApi</h3>
+</div>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Gọi API ở đây nếu cần
+        // var data = await Http.GetFromJsonAsync<T>("/api/endpoint");
+
+        // Nếu có dùng state service:
+        // StateService.OnChange += StateHasChanged;
+    }
+
+    public void Dispose()
+    {
+        // Cleanup nếu cần
+        // StateService.OnChange -= StateHasChanged;
+    }
+}

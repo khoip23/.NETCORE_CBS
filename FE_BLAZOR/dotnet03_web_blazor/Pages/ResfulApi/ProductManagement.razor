@@ -1,0 +1,53 @@
+@page "/products"
+@inject HttpClient _http
+
+<div class="container">
+    <h3>Product management</h3>
+    <table class="table w-75 mx-auto">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Img</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Deleted</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ProductResfulModel item in lstProduct)
+            {
+                <tr>
+                    <th>@item.id</th>
+                    <th>@item.name</th>
+                    <th>@item.price</th>
+                    <td>
+                        <img src="@item.img" alt="..." width="50" />
+                    </td>
+                    <th>@item.description</th>
+                    <th>@item.type</th>
+                    <th>@item.deleted</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+
+
+@code {
+    public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>();
+    protected override async Task OnInitializedAsync()
+    {
+        // Gọi API ở đây nếu cần
+        lstProduct = await
+        _http.GetFromJsonAsync<List<ProductResfulModel>>("https://svcy.myclass.vn/api/ProductApi/getall");
+
+
+        // Nếu có dùng state service:
+        // StateService.OnChange += StateHasChanged;
+    }
+
+}

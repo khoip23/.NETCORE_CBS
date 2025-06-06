@@ -1,10 +1,40 @@
 @page "/"
 @layout HomeLayout
+@inject HttpClient _http
 
-<div class="container-fluid">
-    hello cybersoft
+<div class="container">
+    <div class="row">
+        @foreach (ProductResfulModel item in lstProduct)
+        {
+            <div class="mt-2 col-3">
+                <div class="card">
+                    <img src="@item.img" alt="..." />
+                    <div class="card-body">
+                        <p class="card-title">@item.name</p>
+                        <p class="card-text">@item.price</p>
+                        <button class="btn btn-dark">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
 
+@code {
+    public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>();
+    protected override async Task OnInitializedAsync()
+    {
+        // Gọi API ở đây nếu cần
+        lstProduct = await _http.GetFromJsonAsync<List<ProductResfulModel>>("https://svcy.myclass.vn/api/ProductApi/getall");
+        Console.WriteLine($"{JsonSerializer.Serialize(lstProduct)}");
+
+
+
+        // Nếu có dùng state service:
+        // StateService.OnChange += StateHasChanged;
+    }
+
+}
 
 
 
