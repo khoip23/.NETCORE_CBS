@@ -1,5 +1,6 @@
 @page "/products"
 @inject HttpClient _http
+@inject ProductResfulService _prodService
 
 <div class="container">
     <h3>Product management</h3>
@@ -16,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (ProductResfulModel item in lstProduct)
+            @foreach (ProductResfulModel item in _prodService.lstProduct)
             {
                 <tr>
                     <th>@item.id</th>
@@ -38,16 +39,15 @@
 
 
 @code {
-    public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>();
+    @* public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>(); *@
     protected override async Task OnInitializedAsync()
     {
         // Gọi API ở đây nếu cần
-        lstProduct = await
-        _http.GetFromJsonAsync<List<ProductResfulModel>>("https://svcy.myclass.vn/api/ProductApi/getall");
+        await _prodService.getAllProduct();
 
 
         // Nếu có dùng state service:
-        // StateService.OnChange += StateHasChanged;
+        _prodService.OnChange += StateHasChanged;
     }
 
 }

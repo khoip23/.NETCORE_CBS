@@ -1,10 +1,10 @@
 @page "/"
 @layout HomeLayout
 @inject HttpClient _http
-
+@inject ProductResfulService _prodService
 <div class="container">
     <div class="row">
-        @foreach (ProductResfulModel item in lstProduct)
+        @foreach (ProductResfulModel item in _prodService.lstProduct)
         {
             <div class="mt-2 col-3">
                 <div class="card">
@@ -21,22 +21,13 @@
 </div>
 
 @code {
-    public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>();
+    @* public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>(); *@
     protected override async Task OnInitializedAsync()
     {
         // Gọi API ở đây nếu cần
-        lstProduct = await _http.GetFromJsonAsync<List<ProductResfulModel>>("https://svcy.myclass.vn/api/ProductApi/getall");
-        Console.WriteLine($"{JsonSerializer.Serialize(lstProduct)}");
-
-
-
+        await _prodService.getAllProduct();
         // Nếu có dùng state service:
-        // StateService.OnChange += StateHasChanged;
+        _prodService.OnChange += StateHasChanged;
     }
 
 }
-
-
-
-
-

@@ -16,6 +16,7 @@ builder.Services.AddScoped<StateNumberService>();
 builder.Services.AddScoped<Burger>();
 builder.Services.AddScoped<BurgerStateService>();
 builder.Services.AddScoped<ProductStateService>();
+builder.Services.AddScoped<ProductResfulService>();
 
 var app = builder.Build();
 
