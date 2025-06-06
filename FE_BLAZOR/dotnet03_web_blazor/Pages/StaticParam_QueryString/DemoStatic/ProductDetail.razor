@@ -1,0 +1,29 @@
+@page "/product-detail/{id:int}"
+
+@inject HttpClient Http
+@implements IDisposable
+
+<div class="container">
+    <h3>Detail</h3>
+</div>
+
+@code {
+    [Parameter]
+    public int id {get; set;}
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        // Xử lý khi nhận tham số mới từ parent
+        await Task.CompletedTask;
+    }
+
+    public void Dispose()
+    {
+        // Cleanup nếu cần
+        // StateService.OnChange -= StateHasChanged;
+    }
+}
