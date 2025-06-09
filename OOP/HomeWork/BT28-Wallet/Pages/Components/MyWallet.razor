@@ -1,0 +1,68 @@
+<div class="container bg-dark rounded-3 w-50 py-5">
+    <div class="row text-center text-white">
+        <div class="mb-5">
+            <div class="my-wallet-head">
+                <h1>My Wallet</h1>
+                <h2 class="text-warning">
+                    $@walletVM.Balance
+                </h2>
+                <p>Total balance</p>
+            </div>
+            <div class="button">
+                <button class="btn btn-success w-25" data-bs-toggle="modal" data-bs-target="#modalId"
+                    @onclick="@(() => GetModal("Deposit"))">Deposit</button>
+                <button class="btn btn-danger w-25" data-bs-toggle="modal" data-bs-target="#modalId"
+                    @onclick="@(() => GetModal("Withdraw"))">Withdraw</button>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <table class="table table-bordered rounded-3 text-center">
+                <tbody>
+                    @if (list.Count > 0)
+                    {
+                        foreach (var transaction in list)
+                        {
+                            <tr class="@GetRowClass(transaction.Type)">
+                                <td>@transaction.Type</td>
+                                <td>@transaction.Amount.ToString("C")</td>
+                                <td>@transaction.Date.ToString("dd MMM yyyy hh:mm tt")</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3">No transactions available</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<ModalWallet modalAction="@modalAction" OnTransactionAdded="AddTransaction" @ref="modalWalletRef" />
+
+@code {
+    private ModalWallet? modalWalletRef;
+
+    private WalletVM walletVM = new WalletVM();
+    private string modalAction { get; set; } = "Deposit";
+    private List<WalletVM> list { get; set; } = new();
+
+    private void GetModal(string type)
+    {
+        modalAction = type;
+    }
+
+    private void AddTransaction(WalletVM transaction)
+    {
+        list.Add(transaction);
+        if(transaction.Type == "Deposit")
+        walletVM.Balance += transaction.Amount;else walletVM.Balance -= transaction.Amount;
+        StateHasChanged();
+    }
+
+    private string GetRowClass(string type) => type == "Deposit" ? "bg-success text-white" : "bg-danger text-white";
+}
