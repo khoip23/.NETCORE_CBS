@@ -1,0 +1,86 @@
+@page "/contact-form"
+@using HomeWork_Day27.ViewModels
+<div class="container">
+    <div>
+        <h1>Customer Contact Form</h1>
+    </div>
+
+    <EditForm Model="@model" OnValidSubmit="HandleSubmit">
+
+        <DataAnnotationsValidator />
+        <div>
+            <!-- Full Name -->
+            <div>
+                <p>Full Name *</p>
+                <input type="text" placeholder="Enter your full name" @bind="model.FullName">
+                <ValidationMessage For="@(() => model.FullName)" />
+            </div>
+
+            <!-- Email -->
+            <div>
+                <p>Email *</p>
+                <input type="text" placeholder="Enter your email" @bind="model.Email">
+                <ValidationMessage For="@(() => model.Email)" />
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+                <p>Phone Number *</p>
+                <input type="text" placeholder="Enter your phone number" @bind="model.PhoneNumber">
+                <ValidationMessage For="@(() => model.PhoneNumber)" />
+            </div>
+
+            <!-- Address -->
+            <div>
+                <p>Address</p>
+                <input type="text" placeholder="Enter your address" @bind="model.Address">
+                <ValidationMessage For="@(() => model.Address)" />
+            </div>
+
+            <!-- Message -->
+            <div>
+                <p>Message *</p>
+                <textarea placeholder="Enter your message" cols="71" @bind="model.Message"></textarea>
+                <ValidationMessage For="@(() => model.Message)" />
+            </div>
+
+            <!-- Select Service -->
+            <div>
+                <p>Select Service *</p>
+                <select @bind="model.SelectedService">
+                    <option value="" disabled selected>Choose...</option>
+                    <option value="Online consultation">Online consultation</option>
+                    <option value="Offline consultation">Offline consultation</option>
+                </select>
+                <ValidationMessage For="@(() => model.SelectedService)" />
+            </div>
+
+            <!-- Terms and Conditions -->
+            <div>
+                <label>
+                    <input type="checkbox" @bind="model.AgreeToTerms">
+                    I agree to the terms and conditions *
+                </label>
+                <ValidationMessage For="@(() => model.AgreeToTerms)" />
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </div>
+        </div>
+    </EditForm>
+
+</div>
+
+
+@code {
+
+    CustomerContactVM model = new();
+
+    void HandleSubmit()
+    {
+        Console.WriteLine("Save Data");
+    }
+
+}
