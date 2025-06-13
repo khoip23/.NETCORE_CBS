@@ -29,6 +29,11 @@
                     <th>@item.description</th>
                     <th>@item.type</th>
                     <th>@item.deleted</th>
+                    <th>
+                        <NavLink href="@($"/product-edit/{item.id}")">
+                            <i class="fa fa-edit"></i>
+                        </NavLink>
+                    </th>
                 </tr>
             }
         </tbody>
