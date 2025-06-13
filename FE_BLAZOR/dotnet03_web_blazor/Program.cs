@@ -17,6 +17,7 @@ builder.Services.AddScoped<Burger>();
 builder.Services.AddScoped<BurgerStateService>();
 builder.Services.AddScoped<ProductStateService>();
 builder.Services.AddScoped<ProductResfulService>();
+builder.Services.AddScoped<RoomService>();
 
 var app = builder.Build();
 
@@ -35,6 +36,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.MapBlazorHub();
+app.MapHub<RoomHub>("/roomhub");
 app.MapFallbackToPage("/_Host");
 
 app.Run();
