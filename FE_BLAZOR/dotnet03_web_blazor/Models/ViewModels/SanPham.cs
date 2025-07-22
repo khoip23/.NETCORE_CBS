@@ -1,7 +1,8 @@
 public class SanPhamVM
 {
-    public int maSanPham { get; set; }
-    public string? tenSanPham { get; set; }
-    public double giaBan { get; set; }
-    public string? hinhAnh { get; set; }
+    public int MaSanPham { get; set; }
+    public string? TenSanPham { get; set; }
+    public double GiaBan { get; set; }
+    public string? HinhAnh { get; set; }
+    
 }

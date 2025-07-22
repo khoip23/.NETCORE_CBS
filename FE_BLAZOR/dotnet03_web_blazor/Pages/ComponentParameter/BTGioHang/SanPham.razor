@@ -1,31 +1,33 @@
 <div class="card">
-    <img src="@dataSP.hinhAnh" alt="..." height="200" style="object-fit: cover;" />
+    <img src="@dataSP.HinhAnh" alt="..." height="200" style="object-fit: cover;" />
     <div class="card-body">
-        <h3 class="text-title"> @dataSP.tenSanPham </h3>
-        <div class="card-text"> @dataSP.giaBan </div>
+        <h3 class="text-title">@dataSP.TenSanPham</h3>
+        <div class="card-text">@dataSP.GiaBan</div>
         <button class="btn btn-dark" @onclick="() => clickThemGioHang(dataSP)">
-            <i class="fa fa-cart-plus"></i> Thêm vào giỏ hàng
+            <i class="fa fa-cart-plus"></i> Thêm giỏ hàng
         </button>
     </div>
+
 </div>
 
-@code
-{
+@code {
     [Parameter]
-    public SanPhamVM dataSP {get; set;} = new SanPhamVM();
+    public SanPhamVM dataSP { get; set; } = new SanPhamVM();
     [Parameter]
-    public EventCallback<SanPhamGioHang> themGioHang {get; set;}
-    public void clickThemGioHang(SanPhamVM spClick){
-        //tạo ra dữ liệu có type là sanPhamGioHang
-        SanPhamGioHang spGH = new SanPhamGioHang();
-        spGH.maSanPham = spClick.maSanPham;
-        spGH.tenSanPham = spClick.tenSanPham;
-        spGH.hinhAnh = spClick.hinhAnh;
-        spGH.giaBan = spClick.giaBan;
-        spGH.soLuong = 1;
-        //tại đây gọi hàm evencallback được truyền từ component gốc là btGioHang để đưa dữ liệu lên component đó là thay đổi state
-        
-        themGioHang.InvokeAsync(spGH);
+    public EventCallback<SanPhamGioHang> themGioHang { get; set; }
 
+    public void clickThemGioHang(SanPhamVM spClick)
+    {
+        //Tạo ra dữ liệu có type là SanPhamGioHang
+        SanPhamGioHang spGH = new SanPhamGioHang();
+        spGH.MaSanPham = spClick.MaSanPham;
+        spGH.TenSanPham = spClick.TenSanPham;
+        spGH.HinhAnh = spClick.HinhAnh;
+        spGH.GiaBan = spClick.GiaBan;
+        spGH.SoLuong = 1;
+        //Tại đây gọi hàm event callback được truyền từ component gốc là BTGioHang để đưa dữ liệu lên component đó làm thay đổi state
+        themGioHang.InvokeAsync(spGH);
     }
+
+
 }

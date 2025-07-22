@@ -1,30 +1,30 @@
 @page "/demo-setparam"
 
 <div class="container" style="margin: 50px auto;">
-    <div class="row">
+    <div class="row" >
         @foreach(ProductCardVM item in lstProduct){
-            <div class="col-md-3 mt-2">
-            <div class="card">
+            <div class="col-md-3 mt-2" >
+            <div class="card" >
                 <img src="@item.image" alt="..." />
             </div>
             <div class="card-body">
                 <h3>@item.name</h3>
                 <p>@item.price</p>
-                <button @onclick="() => ViewDetail(item)" class="btn btn-outline-success">View Detail</button>
+                <button @onclick="()=>ViewDetail(item)" class="btn btn-outline-success" >View detail</button>
             </div>
         </div>
         }
     </div>
-
-    <DetailProduct prodDetail = "@prodDetail"/>
+    <hr />
+    <DetailProduct prodDetail="@prodDetail" />
 </div>
 
-@code{
+@code {
     public List<ProductCardVM> lstProduct = DbCarProducts.lstProduct;
-    
-    public ProductCardVM prodDetail = DbCarProducts.lstProduct[1];
+    public ProductCardVM prodDetail = DbCarProducts.lstProduct[1];    
 
-    public void ViewDetail(ProductCardVM prodClick){
+    void ViewDetail(ProductCardVM prodClick){
         prodDetail = prodClick;
     }
+
 }

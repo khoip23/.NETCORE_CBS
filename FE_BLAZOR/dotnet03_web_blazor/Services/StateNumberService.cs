@@ -1,3 +1,4 @@
+
 namespace dotnet03_web_blazor.Services
 {
     public class StateNumberService
@@ -8,7 +9,7 @@ namespace dotnet03_web_blazor.Services
         {
             number += quantity;
             //Gọi sự kiện này để giao diện cập nhật lại
-            //StateHasChange();
+            StateHasChange();
         }
 
         public event Action OnChange;
@@ -16,3 +17,4 @@ namespace dotnet03_web_blazor.Services
         public void StateHasChange() => OnChange?.Invoke();
     }
 }
+

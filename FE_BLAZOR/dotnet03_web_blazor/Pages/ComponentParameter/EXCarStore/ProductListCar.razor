@@ -10,13 +10,11 @@
 
     </div>
 </div>
-
-
 @code {
     public List<ProductCardVM> lstCarProduct = DbCarProducts.lstProduct;
-
+    
     [Parameter]
-    public EventCallback<ProductCardVM> ChangeCarDetail { get; set; }
+    public EventCallback<ProductCardVM> ChangeCarDetail{get;set;}
 
 
 }

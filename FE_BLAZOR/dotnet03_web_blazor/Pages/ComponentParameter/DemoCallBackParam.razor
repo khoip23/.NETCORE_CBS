@@ -3,11 +3,11 @@
 <div class="container">
     <h3>Danh sách sản phẩm</h3>
     <div class="row">
-        @foreach (ProductCardVM item in lstProduct)
-        {
-            <div class="col-md-4">
+        @foreach(ProductCardVM item in lstProduct){
+            <div class="col-md-4 mt-2">
                 <ItemCard dataItem="@item" callbackDetail="handleViewDetail" />
-                @* <button @onclick @= "()=> handleViewDetail(item)">Xem Chi tiết sản phẩm</button> *@
+                @* <button @onclick="()=> handleViewDetail(item)">xem chi tiết</button> *@
+
             </div>
         }
     </div>
@@ -23,15 +23,15 @@
                 <table class="table">
                     <tbody>
                         <tr>
-                            <th>@prodDetail.id</th>
+                            <th>Id</th>
                             <th>@prodDetail.id</th>
                         </tr>
                         <tr>
-                            <th>@prodDetail.name</th>
+                            <th>Name</th>
                             <th>@prodDetail.name</th>
                         </tr>
                         <tr>
-                            <th>@prodDetail.price</th>
+                            <th>Price</th>
                             <th>@prodDetail.price</th>
                         </tr>
                     </tbody>
@@ -41,28 +41,26 @@
     </div>
 </div>
 
-<hr/>
-
+<hr />
 <h3>Ref</h3>
 <div class="w-25">
-    <ItemCard dataItem="@DbProducts.lstProduct[0]" @ref = "@itemCardComponent"/>
-    <button @onclick="handleClickParent">click parent</button>
+    <ItemCard dataItem="@DbProducts.lstProduct[0]" @ref="@itemCardComponent" />
+    <button @onclick="handleClickParent">Click parent</button>
 </div>
+
 
 @code {
 
     public List<ProductCardVM> lstProduct = DbProducts.lstProduct;
-    public ItemCard itemCardComponent = new ItemCard();
-    public ProductCardVM prodDetail {get; set;} = DbProducts.lstProduct[0];
-
+    public ProductCardVM prodDetail {get;set;}  = DbProducts.lstProduct[0];
+    public ItemCard itemCardComponent;
     public void handleViewDetail(ProductCardVM item){
         prodDetail = item;
     }
     public void handleClickParent(){
-        itemCardComponent.ChangeProduct(DbProducts.lstProduct[1]);
+        itemCardComponent.ChangeProduct(DbProducts.lstProduct[2]);
     }
-
-    public void StateHasChangedPublic(){
+    public void StateHasChangedPublic (){
         StateHasChanged();
     }
 }

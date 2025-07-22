@@ -1,8 +1,10 @@
 @page "/"
 @layout HomeLayout
+@inject ProductResfulService _prodService;
 @inject HttpClient _http
-@inject ProductResfulService _prodService
+
 <div class="container">
+    <h3>Home</h3>
     <div class="row">
         @foreach (ProductResfulModel item in _prodService.lstProduct)
         {
@@ -17,11 +19,12 @@
                 </div>
             </div>
         }
+
     </div>
 </div>
 
+
 @code {
-    @* public List<ProductResfulModel>? lstProduct = new List<ProductResfulModel>(); *@
     protected override async Task OnInitializedAsync()
     {
         // Gọi API ở đây nếu cần

@@ -12,12 +12,13 @@ public class RoomHub : Hub
 
     public override async Task OnConnectedAsync() //Phương thức connect (gọi khi khởi động ứng dụng hoặc component)
     {
+
         Console.WriteLine($"[SignalR] Connected: {Context.ConnectionId}");
         await base.OnConnectedAsync();
         //Gọi hàm gửi dữ liệu về toàn client
         await Clients.All.SendAsync("SendToAllRoom", _roomService.getAllRoom());
-    }
 
+    }
     //Phương thức disconnect (gọi khi dispose hoặc đóng ứng dụng)
     public override async Task OnDisconnectedAsync(Exception? exception)
     {
@@ -29,7 +30,7 @@ public class RoomHub : Hub
     {
         //Tạo room add vào roomlist
         _roomService.addRoom();
-        //Sau khi thêm room xong thì sendall lại kết quả
+        //Sau khi thêm room xong thì sendall lại kết quả 
         await Clients.All.SendAsync("SendToAllRoom", _roomService.getAllRoom());
     }
 }

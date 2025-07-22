@@ -38,26 +38,23 @@
             <option value="tablet">Tablet</option>
         </select>
     </div>
-
     <button type="submit" class="btn btn-primary">Create</button>
-    @if (isSubmit == 0)
+    @if (isSubmit == 1)
     {
         <div class="alert alert-success mt-2">
-            Thêm thành công
+            @_prodService.responseMessage
         </div>
     }
     else if (isSubmit == 2)
     {
         <div class="alert alert-danger mt-2">
-            Thêm sản phẩm thất bại
+            @_prodService.responseMessage
         </div>
     }
 </EditForm>
-
 @code {
     private ProductResfulModel myModel = new ProductResfulModel();
     public int isSubmit = 0;
-
     private async Task HandleValidSubmit()
     {
         // Xử lý submit ở đây

@@ -1,7 +1,6 @@
 @page "/demo-oninit"
 @inject HttpClient _http
 @inject NavigationManager _nav
-
 <div class="container">
     <button class="btn btn-dark" @onclick="getDataApi">Tải data</button>
     <div class="form-group my-2">
@@ -41,6 +40,7 @@
             List<ProductModelApi>? data = await
             _http.GetFromJsonAsync<List<ProductModelApi>>("https://svcy.myclass.vn/api/ProductApi/getall");
             lst = data;
+            Console.WriteLine($"{JsonSerializer.Serialize(data)}");
         }
         catch (Exception ex)
         {
@@ -54,6 +54,7 @@
             List<string> ? data = await
             _http.GetFromJsonAsync<List<string>>($"{_nav.BaseUri}/Data/Data.json");
             lstCategory = data;
+            Console.WriteLine($"{JsonSerializer.Serialize(data)}");
         }
         catch (Exception ex)
         {

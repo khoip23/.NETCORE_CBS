@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-3">
             <h3>@prodDetail?.name</h3>
             <img class="w-100" src="@prodDetail?.image" alt="..." />
         </div>
         <div class="col-8">
-            <h3>product</h3>
+            <h3>Product detail</h3>
             <table class="table">
                 <tbody>
                     <tr>
@@ -13,12 +13,12 @@
                         <th>@prodDetail?.id</th>
                     </tr>
                     <tr>
+                        <th>name</th>
                         <th>@prodDetail?.name</th>
-                        <th>1000</th>
                     </tr>
                     <tr>
+                        <th>price</th>
                         <th>@prodDetail?.price</th>
-                        <th>1000</th>
                     </tr>
                 </tbody>
             </table>
@@ -32,13 +32,15 @@
 
     public override async Task SetParametersAsync(ParameterView lstParam)
     {
+        //Can thiệp vào quá trình trước khi render ra giao diện mỗi khi component thay đổi giá trị param
         ProductCardVM? param = lstParam.GetValueOrDefault<ProductCardVM>("prodDetail");
-
-        //thay đổi giá trị trước khi render ra giao diện
-        if (param.id == 2)
-        {
-            param.price = 10000;
-        }
+        Console.WriteLine(JsonSerializer.Serialize(param));
+        if(param.id == 1){
+             param.price = 10000;
+        }   
         await base.SetParametersAsync(lstParam);
+
+
     }
+
 }

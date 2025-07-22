@@ -2,6 +2,7 @@
 @inject HttpClient _http
 @inject ProductResfulService _prodService
 
+
 <div class="container">
     <h3>Product management</h3>
     <table class="table w-75 mx-auto">
@@ -14,25 +15,32 @@
                 <th>Description</th>
                 <th>Type</th>
                 <th>Deleted</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (ProductResfulModel item in _prodService.lstProduct)
-            {
+            @foreach(ProductResfulModel item in _prodService.lstProduct){
                 <tr>
-                    <th>@item.id</th>
-                    <th>@item.name</th>
-                    <th>@item.price</th>
+                    <td>@item.id</td>
+                    <td>@item.name</td>
+                    <td>@item.price</td>
                     <td>
                         <img src="@item.img" alt="..." width="50" />
                     </td>
-                    <th>@item.description</th>
-                    <th>@item.type</th>
-                    <th>@item.deleted</th>
+                    <td>@item.description</td>
+                    <td>@item.type</td>
+                    <td>@item.deleted</td>
                     <th>
-                        <NavLink href="@($"/product-edit/{item.id}")">
-                            <i class="fa fa-edit"></i>
+                        <NavLink href="@($"/product-edit/{item.id}")" class="btn btn-primary"> 
+                            <i class="fa fa-edit "></i>
                         </NavLink>
+                       
+                    </th>
+                    <th>
+                         <button class="btn btn-danger" @onclick="()=>handleDelete(item.id)">
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </th>
                 </tr>
             }
@@ -49,10 +57,11 @@
     {
         // Gọi API ở đây nếu cần
         await _prodService.getAllProduct();
-
-
         // Nếu có dùng state service:
         _prodService.OnChange += StateHasChanged;
     }
 
+    public async Task handleDelete(string id){
+        await _prodService.deleteProductById(id);
+    }   
 }

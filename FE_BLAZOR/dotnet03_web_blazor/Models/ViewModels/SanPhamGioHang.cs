@@ -1,13 +1,15 @@
 public class SanPhamGioHang
 {
-    public int maSanPham { get; set; }
-    public string? tenSanPham { get; set; }
-    public double giaBan { get; set; }
-    public double soLuong { get; set; }
-    public string? hinhAnh { get; set; }
+    public int MaSanPham { get; set; }
+    public string? TenSanPham { get; set; }
+    public double GiaBan { get; set; }
+    public double SoLuong { get; set; }
+    public string? HinhAnh { get; set; }
 
     public string tinhTongTien()
     {
-        return (soLuong * giaBan).ToString("N0");
+        return (SoLuong * GiaBan).ToString("N0"); //10,000,000.00
     }
 }
+
+
