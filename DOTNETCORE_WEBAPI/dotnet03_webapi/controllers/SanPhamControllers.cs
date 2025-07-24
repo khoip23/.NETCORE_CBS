@@ -21,18 +21,28 @@ namespace dotnet03_webapi.Controllers
                 maSP = 1,
                 tenSP = "iphone",
                 gia = 10000,
+                Thoigianbaohanh = "2 năm",
             },
             new SanPham()
             {
-                maSP = 1,
+                maSP = 2,
                 tenSP = "iphone11",
                 gia = 20000,
+                Thoigianbaohanh = "2 năm",
             },
             new SanPham()
             {
-                maSP = 1,
+                maSP = 3,
                 tenSP = "iphone13",
                 gia = 30000,
+                Thoigianbaohanh = "2 năm",
+            },
+            new SanPham()
+            {
+                maSP = 4,
+                tenSP = "iphone16",
+                gia = 40000,
+                Thoigianbaohanh = "2 năm",
             },
         };
 
@@ -40,6 +50,12 @@ namespace dotnet03_webapi.Controllers
 
         [HttpGet("layDanhSachSanPham")] //định nghĩa api lấy dữ liệu (viết theo chuẩn resful api)
         public async Task<List<SanPham>> GetSanPham()
+        {
+            return lstSanPham;
+        }
+
+        [HttpGet("layDanhSachSanPham")] //định nghĩa api lấy dữ liệu (viết theo chuẩn resful api)
+        public async Task<List<SanPham>> GetSanPham1()
         {
             return lstSanPham;
         }
