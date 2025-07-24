@@ -45,15 +45,28 @@ namespace dotnet03_webapi.Controllers
         public SanPhamController() { }
 
         [HttpGet("layDanhSachSanPham")] //định nghĩa api lấy dữ liệu (viết theo chuẩn resful api)
-        public async Task<List<SanPham>> GetSanPham()
+        public async Task<IActionResult> GetSanPham()
         {
-            return lstSanPham;
+            return Ok(new HttpResponseModel<List<SanPham>>()
+            {
+                data = lstSanPham
+            });
+
+            
         }
 
         [HttpGet("GetInfoProd/{maSP}")]
-        public async Task<SanPham> GetSanPham([FromRoute] int maSP)
+        public async Task<IActionResult> GetSanPham([FromRoute] int maSP)
         {
-            return lstSanPham.Find(sp => sp.maSP == maSP);
+            SanPham? sp = lstSanPham.Find(sp => sp.maSP == maSP);
+            if (sp != null)
+            {
+                return Ok(new HttpResponseModel<SanPham>
+                {
+                    data = sp
+                });
+            }
+            return BadRequest("Không tìm thấy sản phẩm");
         }
 
         [HttpPost("AddProd")]
@@ -88,6 +101,18 @@ namespace dotnet03_webapi.Controllers
             }
 
             return "Không tìm thấy sản phẩm";
+        }
+
+        [HttpGet("timSP")]
+        public async Task<List<SanPham>> timKiemSanPham([FromQuery] string tuKhoa)
+        {
+            var lstRes = lstSanPham.Where(sp => sp.tenSP.Contains(tuKhoa));
+            if (lstRes.Count() > 0)
+            {
+                return lstRes.ToList();
+            }
+
+            return null;
         }
     }
 }
