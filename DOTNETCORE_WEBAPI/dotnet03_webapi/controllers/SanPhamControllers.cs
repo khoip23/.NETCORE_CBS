@@ -89,18 +89,5 @@ namespace dotnet03_webapi.Controllers
 
             return "Không tìm thấy sản phẩm";
         }
-
-        [HttpDelete("XoaSanPham/{maSP}")]
-        public async Task<string> DeleteSanPhamtest([FromRoute] int maSP)
-        {
-            SanPham sRemove = lstSanPham.Find(sp => sp.maSP == maSP);
-            if (sRemove != null)
-            {
-                lstSanPham.Remove(sRemove);
-                return "xóa thành công";
-            }
-
-            return "Không tìm thấy sản phẩm";
-        }
     }
 }
