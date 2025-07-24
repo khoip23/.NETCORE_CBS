@@ -21,28 +21,24 @@ namespace dotnet03_webapi.Controllers
                 maSP = 1,
                 tenSP = "iphone",
                 gia = 10000,
-                Thoigianbaohanh = "2 năm",
             },
             new SanPham()
             {
                 maSP = 2,
                 tenSP = "iphone11",
                 gia = 20000,
-                Thoigianbaohanh = "2 năm",
             },
             new SanPham()
             {
                 maSP = 3,
                 tenSP = "iphone13",
                 gia = 30000,
-                Thoigianbaohanh = "2 năm",
             },
             new SanPham()
             {
                 maSP = 4,
                 tenSP = "iphone16",
                 gia = 40000,
-                Thoigianbaohanh = "2 năm",
             },
         };
 
@@ -54,10 +50,44 @@ namespace dotnet03_webapi.Controllers
             return lstSanPham;
         }
 
-        [HttpGet("layDanhSachSanPham")] //định nghĩa api lấy dữ liệu (viết theo chuẩn resful api)
-        public async Task<List<SanPham>> GetSanPham1()
+        [HttpGet("GetInfoProd/{maSP}")]
+        public async Task<SanPham> GetSanPham([FromRoute] int maSP)
         {
-            return lstSanPham;
+            return lstSanPham.Find(sp => sp.maSP == maSP);
+        }
+
+        [HttpPost("AddProd")]
+        public async Task<string> PostSanPham([FromBody] SanPham sp)
+        {
+            lstSanPham.Add(sp);
+            return "Thêm thành công";
+        }
+
+        [HttpPut("CapNhatSP/{maSP}")]
+        public async Task<string> CapNhatSP([FromRoute] int maSP, [FromBody] SanPham sanPhamCapNhat)
+        {
+            SanPham sUpdate = lstSanPham.Find(sp => sp.maSP == maSP);
+            if (sUpdate != null)
+            {
+                sUpdate.tenSP = sanPhamCapNhat.tenSP;
+                sUpdate.gia = sanPhamCapNhat.gia;
+                return "Cập nhật thành công";
+            }
+
+            return "Không tìm thấy sản phẩm";
+        }
+
+        [HttpDelete("XoaSanPham/{maSP}")]
+        public async Task<string> DeleteSanPham([FromRoute] int maSP)
+        {
+            SanPham sRemove = lstSanPham.Find(sp => sp.maSP == maSP);
+            if (sRemove != null)
+            {
+                lstSanPham.Remove(sRemove);
+                return "xóa thành công";
+            }
+
+            return "Không tìm thấy sản phẩm";
         }
     }
 }
