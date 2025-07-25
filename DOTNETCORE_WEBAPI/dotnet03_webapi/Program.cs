@@ -1,3 +1,6 @@
+using dotnet03_webapi.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //service map các đầu route api của các class controllers có sử dụng [route]
@@ -5,6 +8,12 @@ builder.Services.AddControllers();
 
 //Add service swagger
 builder.Services.AddSwaggerGen();
+
+//khai báo service EF
+var connectionString = "Server=127.0.0.1,1433; Database=QuanLyNhanVienDB;User Id = sa;Passwork=Khoideptrai312@;Integrated Security=True;TrustServerCertìicate=True";
+
+builder.Services.AddDbContext<QLNVContext>(options =>
+    options.UseSqlServer(connectionString));
 
 var app = builder.Build();
 
