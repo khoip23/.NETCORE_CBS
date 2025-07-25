@@ -87,7 +87,7 @@ namespace dotnet03_webapi.Controllers
                 return "Cập nhật thành công";
             }
 
-            return "Không tìm thấy sản phẩm";
+            return null;
         }
 
         [HttpDelete("XoaSanPham/{maSP}")]
