@@ -8,6 +8,8 @@ public class NhanVien
     public decimal luong { get; set; }
     public bool gioiTinh { get; set; }
     public int maPhongBan { get; set; }
+    public string? moTa { get; set; }
+    public int tuoi {get; set; }
 
     public PhongBan phongban { get; set; }
 }

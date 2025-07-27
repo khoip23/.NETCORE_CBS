@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
 //khai báo service EF
-var connectionString = "Server=127.0.0.1,1433; Database=QuanLyNhanVienDB;User Id = sa;Passwork=Khoideptrai312@;Integrated Security=True;TrustServerCertìicate=True";
+var connectionString = "Server=127.0.0.1,1433; Database=QuanLyNhanVienDB;User Id = sa;Password=Khoideptrai312@;TrustServerCertificate=True";
 
 builder.Services.AddDbContext<QLNVContext>(options =>
     options.UseSqlServer(connectionString));

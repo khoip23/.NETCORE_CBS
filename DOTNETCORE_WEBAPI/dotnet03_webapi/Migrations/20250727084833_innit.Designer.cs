@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dotnet03_webapi.Models;
 
@@ -10,9 +11,11 @@ using dotnet03_webapi.Models;
 namespace dotnet03_webapi.Migrations
 {
     [DbContext(typeof(QLNVContext))]
-    partial class QLNVContextModelSnapshot : ModelSnapshot
+    [Migration("20250727084833_innit")]
+    partial class innit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -44,9 +47,6 @@ namespace dotnet03_webapi.Migrations
                     b.Property<string>("tenNV")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("tuoi")
-                        .HasColumnType("int");
 
                     b.HasKey("IdNV");
 

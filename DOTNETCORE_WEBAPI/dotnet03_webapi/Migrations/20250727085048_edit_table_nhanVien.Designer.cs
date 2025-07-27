@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using dotnet03_webapi.Models;
 
@@ -10,9 +11,11 @@ using dotnet03_webapi.Models;
 namespace dotnet03_webapi.Migrations
 {
     [DbContext(typeof(QLNVContext))]
-    partial class QLNVContextModelSnapshot : ModelSnapshot
+    [Migration("20250727085048_edit_table_nhanVien")]
+    partial class edit_table_nhanVien
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -10,7 +10,7 @@ namespace dotnet03_webapi.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //connectionstring
-            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433; Database=QuanLyNhanVienDB;User Id = sa;Passwork=Khoideptrai312@;Integrated Security=True;TrustServerCertìicate=True");
+            optionsBuilder.UseSqlServer("Server=127.0.0.1,1433; Database=QuanLyNhanVienDB;User Id = sa;Password=Khoideptrai312@;TrustServerCertificate=True");
         }
 
         public DbSet<PhongBan> PhongBans { get; set; }
