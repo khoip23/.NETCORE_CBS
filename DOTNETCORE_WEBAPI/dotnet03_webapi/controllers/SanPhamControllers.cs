@@ -76,6 +76,13 @@ namespace dotnet03_webapi.Controllers
             return "Thêm thành công";
         }
 
+        [HttpPost("AddProd1")]
+        public async Task<string> PostSanPham1([FromBody] SanPham sp)
+        {
+            lstSanPham.Add(sp);
+            return "Thêm thành công";
+        }
+
         [HttpPut("CapNhatSP/{maSP}")]
         public async Task<string> CapNhatSP([FromRoute] int maSP, [FromBody] SanPham sanPhamCapNhat)
         {
