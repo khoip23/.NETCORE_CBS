@@ -90,7 +90,18 @@ namespace dotnet03_webapi.Controllers
             return null;
         }
 
-        
+        [HttpDelete("XoaSanPham/{maSP}")]
+        public async Task<string> DeleteSanPham([FromRoute] int maSP)
+        {
+            SanPham sRemove = lstSanPham.Find(sp => sp.maSP == maSP);
+            if (sRemove != null)
+            {
+                lstSanPham.Remove(sRemove);
+                return "xóa thành công";
+            }
+
+            return "Không tìm thấy sản phẩm";
+        }
 
         [HttpGet("timSP")]
         public async Task<List<SanPham>> timKiemSanPham([FromQuery] string tuKhoa)
