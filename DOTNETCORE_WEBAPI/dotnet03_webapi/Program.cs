@@ -17,6 +17,7 @@ builder.Services.AddDbContext<QLNVContext>(options =>
 
 var app = builder.Build();
 
+
 //sử dụng swagger
 app.UseSwagger();
 app.UseSwaggerUI();

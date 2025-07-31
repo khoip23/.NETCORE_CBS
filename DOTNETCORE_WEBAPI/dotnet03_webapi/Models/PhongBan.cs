@@ -1,11 +1,15 @@
-using System.Collections;
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-public class PhongBan
+namespace dotnet03_webapi.models;
+
+public partial class PhongBan
 {
-    [Key]
-    public int maPhongBan { get; set; }
-    public string tenPhongBan { get; set; }
-    public string diaDiem { get; set; }
-    public ICollection<NhanVien> nhanViens{ get; set; }
+    public int MaPb { get; set; }
+
+    public string? TenPhongBan { get; set; }
+
+    public string? DiaDiem { get; set; }
+
+    public virtual ICollection<NhanVien> NhanViens { get; set; } = new List<NhanVien>();
 }

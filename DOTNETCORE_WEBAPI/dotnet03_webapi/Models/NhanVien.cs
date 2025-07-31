@@ -1,15 +1,19 @@
-using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-public class NhanVien
+namespace dotnet03_webapi.models;
+
+public partial class NhanVien
 {
-    [Key]
-    public int IdNV { get; set; }
-    public string tenNV { get; set; }
-    public decimal luong { get; set; }
-    public bool gioiTinh { get; set; }
-    public int maPhongBan { get; set; }
-    public string? moTa { get; set; }
-    public int tuoi {get; set; }
+    public int MaNhanVien { get; set; }
 
-    public PhongBan phongban { get; set; }
+    public string? TenNhanVien { get; set; }
+
+    public decimal? Luong { get; set; }
+
+    public int? PhongBan { get; set; }
+
+    public string? GioiTinh { get; set; }
+
+    public virtual PhongBan? PhongBanNavigation { get; set; }
 }
